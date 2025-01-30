@@ -1,0 +1,12 @@
+{
+  "name": "miikalei.github.io",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "packageManager": "yarn@4.5.2",
+  "dependencies": {
+    "astro": "^5.2.1"
+  }
+}
