@@ -6,11 +6,34 @@ import oiauia from "./oia-uia.gif";
     some magic sprinkled in to help you build great templates. -->
 <html>
   <body>
-    <img src={oiauia.src} />
+    <div id="midcontainer">
+      <div id="hero">
+        Hello, My name is Miika. I am a professional software engineer, serious
+        about honing my craft. Welcome to my website.
+      </div>
+      <h2>Projects</h2>
+      <h3>Upright</h3>
+      <h3>Something else</h3>
+    </div>
   </body>
 </html>
 <style>
-  h1 {
-    color: orange;
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+  :root {
+    --bg-color: #fbf5dd;
+    --main-color: #a6cdc6;
+    --highlight-color: #16404d;
+    --accent-color: #dda853;
+  }
+  body {
+    font-family: "Rubik";
+    font-size: 18px;
+    width: 100%;
+    background: var(--bg-color);
+  }
+  #midcontainer {
+    margin: 50px auto;
+    max-width: 500px;
   }
 </style>
