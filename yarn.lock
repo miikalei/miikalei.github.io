@@ -3400,6 +3400,7 @@ __metadata:
     "@types/react": "npm:^19.0.10"
     "@types/react-dom": "npm:^19.0.4"
     astro: "npm:5.4.1"
+    mlox: "https://github.com/miikalei/mlox.git"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     tailwindcss: "npm:^4.0.14"
@@ -3507,6 +3508,13 @@ __metadata:
   bin:
     mkdirp: dist/cjs/src/bin.js
   checksum: 10c0/9f2b975e9246351f5e3a40dcfac99fcd0baa31fbfab615fe059fb11e51f10e4803c63de1f384c54d656e4db31d000e4767e9ef076a22e12a641357602e31d57d
+  languageName: node
+  linkType: hard
+
+"mlox@https://github.com/miikalei/mlox.git":
+  version: 0.0.0
+  resolution: "mlox@https://github.com/miikalei/mlox.git#commit=c8433f215bcdd8132b5d27c7407f7743e7f1669f"
+  checksum: 10c0/33a32a57149fd64633b9079303b990d398820d6ec96ad5139a412e12ab706ba6e5a1f84b59e6dc98c781925d47a2fbf024b4f5335834ef73ac7eced0861dbe92
   languageName: node
   linkType: hard
 

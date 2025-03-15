@@ -1,8 +1,14 @@
 import { useState } from 'react'
+import { run } from './run'
 
 export function Codebox() {
     const [code, setCode] = useState(defaultCode)
     const [output, setOutput] = useState('');
+
+    function handleRun() {
+        const runOutput = run(code);
+        setOutput(runOutput);
+    }
 
     return <div>
         <div className="flex">
@@ -12,12 +18,12 @@ export function Codebox() {
             ></textarea>
         </div>
         <div className="m-4">
-            <button onClick={() => console.log("running code")}>Run</button>
+            <button onClick={handleRun}>Run</button>
             <progress>Indeterminate</progress>
         </div>
-        <div className="lowered h-36">
-            Your code output will be displayed here
-        </div>
+        <pre className="lowered h-36 whitespace-pre-wrap overflow-x-auto">
+            {output ?? "Your code output will be displayed here"}
+        </pre>
     </div>
 }
 
