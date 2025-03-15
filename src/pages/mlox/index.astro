@@ -1,77 +1,24 @@
 ---
-import "../../reset.css";
+import "../../global.css";
 import "./_win9x-style/theme.css";
 import "./_win9x-style/skins/98.css";
+import { Codebox } from "./codebox";
 ---
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="themes/cde/theme.css" />
         <title>MLOX</title>
     </head>
-    <body>
-        <div class="desktop grow">
-            <main class="window active">
-                <div class="title-bar">
-                    <div class="title-bar-text">MLOX interpreter</div>
-                </div>
-                <p>
-                    Run MLOX code anywhere, powered by modern javascript! <small
-                        >Remember, this is a toy language
-                    </small>
-                </p>
-                <div class="flex">
-                    <textarea placeholder="Your code here">
-                        Your code here
-                    </textarea>
-                </div>
-                <div class="bottomarea">
-                    <button>Run</button>
-                    <progress>Indeterminate</progress>
-                </div>
-                <div class="lowered output">
-                    Your code output will be displayed here
-                </div>
-            </main>
-        </div>
+    <body class="desktop flex justify-center">
+        <main class="window active max-w-3xl">
+            <div class="title-bar">
+                <div class="title-bar-text">MLOX interpreter</div>
+            </div>
+            <p>
+                Run MLOX code anywhere, powered by modern javascript!
+                <small>Remember, this is a toy language </small>
+            </p>
+            <Codebox client:load />
+        </main>
     </body>
 </html>
-
-<style>
-    html {
-        font-family: var(--preferred-font);
-    }
-    html,
-    body {
-        height: 100%;
-    }
-
-    .desktop {
-        min-height: 100%;
-        overflow: auto;
-    }
-
-    .window {
-        margin: 20px auto;
-        max-width: 600px;
-    }
-
-    .flex {
-        display: flex;
-        flex-direction: row;
-    }
-
-    textarea {
-        resize: none;
-        flex-grow: 1;
-        height: 150px;
-    }
-
-    .bottomarea {
-        margin: 10px 0;
-    }
-
-    .output {
-        height: 150px;
-    }
-</style>

@@ -1,15 +1,16 @@
 ---
+import "../global.css";
 import { Image } from "astro:assets";
 import miika from "./miika.jpg";
 ---
 
 <html>
-  <body>
-    <div id="midcontainer">
-      <div class="flex" style={{ justifyContent: "space-between" }}>
+  <body class="bg-indigo-100 w-full flex items-center justify-center">
+    <main class="max-w-lg my-12">
+      <div class="flex justify-between">
         <div>
-          <h1>Miika Leinonen</h1>
-          <div class="flex" style={{ gap: "5px" }}>
+          <h1 class="text-3xl">Miika Leinonen</h1>
+          <div class="flex gap-3">
             <a href="https://github.com/miikalei">
               <img src="/src/pages/github.svg" width="30" /></a
             >
@@ -30,16 +31,16 @@ import miika from "./miika.jpg";
           width={150}
         />
       </div>
-      <div id="hero" class="flex">
+      <div id="hero" class="flex justify-between items-center">
         <p>
           Hello, My name is Miika. I am a professional software engineer, based
           in Helsinki, Finland. I am serious about honing my craft, and I take
           pride in my producing code that is as stable, performant and secure as
-          possible. Welcome to my website.
+          possible. Welcome to my professional website.
         </p>
       </div>
-      <h2>Projects and activities</h2>
-      <h3>Upright</h3>
+      <h2 class="text-2xl">Stuff I have built</h2>
+      <h3 class="text-xl">Upright</h3>
       <p>
         <a href="https://www.uprightproject.com/">Upright</a> is a company that develops
         a macroeconomic model in order to gain a holistic view on impact footprints
@@ -49,7 +50,7 @@ import miika from "./miika.jpg";
           href="https://uprightplatform.com/">Upright platform</a
         > to see the results!
       </p>
-      <h3>MLox interpreter</h3>
+      <h3 class="text-xl">MLox interpreter</h3>
       <p>
         To follow the excellent book <a href="https://craftinginterpreters.com/"
           >Crafting interpreters</a
@@ -61,9 +62,14 @@ import miika from "./miika.jpg";
           >here.</a
         >
       </p>
-      <h3>Education</h3>
-      <p></p>
-      <h3>Coding exercises</h3>
+      <h3 class="text-xl">This website</h3>
+      <p>
+        The website you are viewing right now is built with Astro and served
+        with GitHub pages. See the source <a
+          href="https://github.com/miikalei/miikalei.github.io">here</a
+        >!
+      </p>
+      <h3 class="text-xl">Miscellaneous exercises</h3>
       <p>
         I like solving simple structured programming puzzles for the easy
         comparisons to alternative solutions. Check out my <a
@@ -75,39 +81,15 @@ import miika from "./miika.jpg";
           >Overthewire.org</a
         >.
       </p>
-    </div>
+      <h2 class="text-2xl">Education</h2>
+      <p>Master of Science at Aalto University</p>
+      <h2 class="text-xl">Skills (and their sources)</h2>
+      <ul>
+        <!-- TODO: Hover-selitteet (ja alleviivaus), mistä taito tulee -->
+        <li>HTML/CSS</li>
+        <li>PostgreSQL</li>
+        <li>Typescript</li>
+      </ul>
+    </main>
   </body>
 </html>
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
-  :root {
-    --bg-color: #fbf5dd;
-    --main-color: #a6cdc6;
-    --highlight-color: #16404d;
-    --accent-color: #dda853;
-  }
-  body {
-    font-family: "Rubik";
-    font-size: 18px;
-    width: 100%;
-    background: var(--bg-color);
-  }
-  #midcontainer {
-    margin: 50px auto;
-    max-width: 600px;
-  }
-
-  #hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-  }
-
-  .flex {
-    display: flex;
-    align-items: center;
-  }
-</style>
