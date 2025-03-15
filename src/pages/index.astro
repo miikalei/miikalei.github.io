@@ -5,8 +5,12 @@ import miika from "./miika.jpg";
 ---
 
 <html>
-  <body class="bg-indigo-100 w-full flex items-center justify-center">
-    <main class="max-w-lg my-12">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Miika Leinonen - Home</title>
+  </head>
+  <body class="bg-indigo-100 w-full flex flex-col items-center justify-center">
+    <main class="max-w-lg my-5 mx-4">
       <div class="flex justify-between">
         <div>
           <h1 class="text-3xl">Miika Leinonen</h1>
@@ -31,7 +35,7 @@ import miika from "./miika.jpg";
           width={150}
         />
       </div>
-      <div id="hero" class="flex justify-between items-center">
+      <div class="flex justify-between items-center">
         <p>
           Hello, My name is Miika. I am a professional software engineer, based
           in Helsinki, Finland. I am serious about honing my craft, and I take
@@ -91,5 +95,15 @@ import miika from "./miika.jpg";
         <li>Typescript</li>
       </ul>
     </main>
+    <footer
+      class="text-sm w-full h-12 bg-slate-300 flex flex-col justify-center items-center"
+    >
+      <p>Miika Leinonen, 2025</p>
+      <p>
+        Check out the website <a
+          href="https://github.com/miikalei/miikalei.github.io">source</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
