@@ -1,6 +1,6 @@
 import { Run } from 'mlox/src/run'
 
-onmessage = function (event: MessageEvent) {
+self.onmessage = function (event: MessageEvent) {
     const code = event.data;
     run(code);
     postMessage({ done: true, msg: null });

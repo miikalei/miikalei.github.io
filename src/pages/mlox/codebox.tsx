@@ -8,12 +8,11 @@ export function Codebox() {
     const [worker, setWorker] = useState<Worker | null>(null);
 
     useEffect(() => {
-        const worker = new Worker(new URL('run-worker.ts', import.meta.url), { type: 'module' });
+        const worker = new Worker(new URL('_run-worker.ts', import.meta.url), { type: 'module' });
 
         console.log("Worker created:", worker);
 
         worker.onmessage = (event) => {
-            console.log("Received event from worker:", event);
             if (event.data.done) {
                 setIsRunning(false);
             } else if (event.data.msg) {
