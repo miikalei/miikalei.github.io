@@ -29,6 +29,7 @@ export function Codebox() {
     }, [])
 
     function handleRun() {
+        setOutput('')
         if (worker) {
             setIsRunning(true)
             worker.postMessage(code)
@@ -38,7 +39,7 @@ export function Codebox() {
     return <div>
         <div className="flex">
             <textarea
-                className="grow h-36 resize-none cursor-auto"
+                className="grow h-42 resize-none cursor-auto"
                 value={code} onChange={(e) => setCode(e.target.value)}
             ></textarea>
         </div>
@@ -46,7 +47,7 @@ export function Codebox() {
             <button onClick={handleRun} disabled={isRunning}>Run</button>
             {isRunning && <div className="progress-bar w-43"></div>}
         </div>
-        <pre className="lowered h-36 whitespace-pre-wrap overflow-x-auto">
+        <pre className="lowered h-42 whitespace-pre-wrap overflow-x-auto">
             {output ?? "Your code output will be displayed here"}
             <div style={{ overflowAnchor: 'auto', height: '1px' }}></div>
         </pre>
