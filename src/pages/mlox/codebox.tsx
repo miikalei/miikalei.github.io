@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export function Codebox() {
     const [code, setCode] = useState(defaultCode)
@@ -9,14 +9,10 @@ export function Codebox() {
 
     const [worker, setWorker] = useState<Worker | null>(null);
 
-    useEffect(() => {
+    const initWorker = useCallback(() => {
         const worker = new Worker(new URL('_run-worker.ts', import.meta.url), { type: 'module' });
 
-        console.log("Worker created:", worker);
-
         worker.onmessage = (event) => {
-            console.log("Received message from worker:", event.data);
-
             if (event.data.done) {
                 setIsRunning(false);
                 if (!event.data.success) {
@@ -30,9 +26,15 @@ export function Codebox() {
         }
 
         setWorker(worker)
+    }, [setIsRunning, setIsError, setOutput, setErrOutput])
+
+    useEffect(() => {
+        initWorker();
 
         return () => {
-            worker.terminate();
+            if (worker) {
+                worker.terminate();
+            }
         }
     }, [])
 
@@ -41,8 +43,19 @@ export function Codebox() {
         setErrOutput('');
         setIsError(false);
         if (worker) {
-            setIsRunning(true)
+            setIsRunning(true);
             worker.postMessage(code)
+        }
+    }
+
+    function handleStop() {
+        setOutput('Execution was interrupted.');
+        setErrOutput('');
+        setIsError(false);
+        if (worker) {
+            worker.terminate();
+            setIsRunning(false);
+            initWorker();
         }
     }
 
@@ -56,6 +69,7 @@ export function Codebox() {
         </div>
         <div className="flex my-4 items-center gap-4">
             <button onClick={handleRun} disabled={isRunning}>Run</button>
+            <button onClick={handleStop} disabled={!isRunning}>Stop</button>
             {isRunning && <div className="progress-bar w-43"></div>}
         </div>
         <div className={`lowered h-42 whitespace-pre-wrap overflow-x-auto ${isError ? "text-red-500" : ''}`}>
