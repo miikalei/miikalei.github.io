@@ -11,17 +11,40 @@ import { Codebox } from "./codebox";
         <title>MLOX</title>
     </head>
     <body class="desktop h-full flex justify-center items-center">
-        <main class="window active grow max-w-3xl">
+        <main id="interpreterwindow" class="window active grow max-w-3xl">
             <div class="title-bar">
                 <div class="title-bar-text">MLOX interpreter</div>
             </div>
-            <div class="m-0.5">
-                <p>
-                    Run MLOX code anywhere, powered by modern javascript!
-                    <small>Remember, this is a toy language </small>
-                </p>
-                <Codebox client:load />
-            </div>
+            <Codebox client:load />
         </main>
     </body>
 </html>
+<style is:global>
+    /* This stuff enables the menu bar layout inside react parts*/
+    [role="menu"],
+    [role="menubar"] {
+        user-select: none;
+        list-style-type: none;
+        display: flex;
+        white-space: nowrap;
+    }
+    [role="menu"] {
+        flex-direction: column;
+    }
+    [role="menu"] li,
+    [role="menubar"] li {
+        position: relative;
+        text-overflow: ellipsis;
+        cursor: default;
+    }
+    [role="menu"] li > ul,
+    [role="menubar"] li > ul {
+        position: absolute;
+        z-index: 1;
+        display: none;
+    }
+    [role="menu"] li:focus-within > ul,
+    [role="menubar"] li:focus-within > ul {
+        display: block;
+    }
+</style>
