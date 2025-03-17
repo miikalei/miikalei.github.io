@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 export function Codebox() {
     const [code, setCode] = useState(defaultCode)
@@ -8,6 +8,12 @@ export function Codebox() {
     const [isError, setIsError] = useState(false);
 
     const [worker, setWorker] = useState<Worker | null>(null);
+
+    // Get scroll anchor to view immediately
+    const anchorRef = useRef<HTMLDivElement | null>(null);
+    useEffect(() => {
+        anchorRef.current?.scrollIntoView();
+    }, [anchorRef]);
 
     const initWorker = useCallback(() => {
         const worker = new Worker(new URL('_run-worker.ts', import.meta.url), { type: 'module' });
@@ -21,7 +27,7 @@ export function Codebox() {
             } else if (event.data.msg) {
                 setOutput(v => v + event.data.msg + '\n');
             } else if (event.data.errorMsg) {
-                setErrOutput(v => v + event.data.errorMsg + '\n')
+                setErrOutput(v => v + event.data.errorMsg + '\n');
             }
         }
 
@@ -73,8 +79,10 @@ export function Codebox() {
             {isRunning && <div className="progress-bar w-43"></div>}
         </div>
         <div className={`lowered h-42 whitespace-pre-wrap overflow-x-auto ${isError ? "text-red-500" : ''}`}>
-            {errOutput || output || "Your code output will be displayed here"}
-            <div style={{ overflowAnchor: 'auto', height: '1px' }}></div>
+            <div className='[overflow-anchor:none] min-h-42'>
+                {errOutput || output || "Your code output will be displayed here"}
+            </div>
+            <div ref={anchorRef} className='[overflow-anchor:auto] [height:1px]'></div>
         </div>
     </div>
 }
