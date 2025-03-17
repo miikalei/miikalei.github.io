@@ -3400,7 +3400,7 @@ __metadata:
     "@types/react": "npm:^19.0.10"
     "@types/react-dom": "npm:^19.0.4"
     astro: "npm:5.4.1"
-    mlox: "https://github.com/miikalei/mlox.git"
+    mlox: "https://github.com/miikalei/mlox.git#master"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     tailwindcss: "npm:^4.0.14"
@@ -3511,10 +3511,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mlox@https://github.com/miikalei/mlox.git":
+"mlox@https://github.com/miikalei/mlox.git#master":
   version: 0.0.0
-  resolution: "mlox@https://github.com/miikalei/mlox.git#commit=c8433f215bcdd8132b5d27c7407f7743e7f1669f"
-  checksum: 10c0/33a32a57149fd64633b9079303b990d398820d6ec96ad5139a412e12ab706ba6e5a1f84b59e6dc98c781925d47a2fbf024b4f5335834ef73ac7eced0861dbe92
+  resolution: "mlox@https://github.com/miikalei/mlox.git#commit=ac0556bf6a4d9441457e031e2079c65ef9ccb972"
+  checksum: 10c0/3b4d3a1f3e596bcee7d703dba7192fe5491c5fc89fb30e2c0625d68a863487230168153fe23cf093b7a7516a916071d1b4855d5b6c645896f1d1e670d2cd9c09
   languageName: node
   linkType: hard
 

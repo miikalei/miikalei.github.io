@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react'
 export function Codebox() {
     const [code, setCode] = useState(defaultCode)
     const [output, setOutput] = useState('');
+    const [errOutput, setErrOutput] = useState('');
     const [isRunning, setIsRunning] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     const [worker, setWorker] = useState<Worker | null>(null);
 
@@ -13,10 +15,17 @@ export function Codebox() {
         console.log("Worker created:", worker);
 
         worker.onmessage = (event) => {
+            console.log("Received message from worker:", event.data);
+
             if (event.data.done) {
                 setIsRunning(false);
+                if (!event.data.success) {
+                    setIsError(true);
+                }
             } else if (event.data.msg) {
                 setOutput(v => v + event.data.msg + '\n');
+            } else if (event.data.errorMsg) {
+                setErrOutput(v => v + event.data.errorMsg + '\n')
             }
         }
 
@@ -28,7 +37,9 @@ export function Codebox() {
     }, [])
 
     function handleRun() {
-        setOutput('')
+        setOutput('');
+        setErrOutput('');
+        setIsError(false);
         if (worker) {
             setIsRunning(true)
             worker.postMessage(code)
@@ -36,6 +47,7 @@ export function Codebox() {
     }
 
     return <div>
+        {errOutput}
         <div className="flex">
             <textarea
                 className="grow h-42 resize-none cursor-auto"
@@ -46,10 +58,10 @@ export function Codebox() {
             <button onClick={handleRun} disabled={isRunning}>Run</button>
             {isRunning && <div className="progress-bar w-43"></div>}
         </div>
-        <pre className="lowered h-42 whitespace-pre-wrap overflow-x-auto">
-            {output ?? "Your code output will be displayed here"}
+        <div className={`lowered h-42 whitespace-pre-wrap overflow-x-auto ${isError ? "text-red-500" : ''}`}>
+            {errOutput || output || "Your code output will be displayed here"}
             <div style={{ overflowAnchor: 'auto', height: '1px' }}></div>
-        </pre>
+        </div>
     </div>
 }
 

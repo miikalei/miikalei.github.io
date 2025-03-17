@@ -2,17 +2,20 @@ import { Run } from 'mlox/src/run'
 
 self.onmessage = function (event: MessageEvent) {
     const code = event.data;
-    run(code);
-    postMessage({ done: true, msg: null });
+    const { success } = run(code);
+    postMessage({ done: true, success });
 }
 
 function print(msg: string) {
-    postMessage({ done: false, msg })
+    postMessage({ msg })
+}
+
+function printError(msg: string) {
+    postMessage({ errorMsg: msg })
 }
 
 function run(program: string) {
-    console.log("Running!!");
-    const runtime = new Run(print);
+    const runtime = new Run(print, printError);
     const returnCode = runtime.runProgram(program);
-    return returnCode;
+    return { success: !returnCode };
 }
