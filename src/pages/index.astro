@@ -6,15 +6,19 @@ import miika from "./miika.jpg";
 
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Miika Leinonen - Home</title>
   </head>
-  <body class="bg-indigo-100 w-full flex flex-col items-center justify-center">
-    <main class="max-w-lg my-5 mx-4">
-      <div class="flex justify-between">
+  <body class="font-mono bg-gray-50 w-full">
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="max-w-2xl mx-auto flex items-center justify-between px-4 py-16"
+      >
         <div>
-          <h1 class="text-3xl">Miika Leinonen</h1>
-          <div class="flex gap-3">
+          <h1 class="font-sans text-3xl">Miika Leinonen</h1>
+          <div class="flex gap-4">
             <a href="https://github.com/miikalei">
               <img src="/src/pages/github.svg" width="30" /></a
             >
@@ -32,119 +36,167 @@ import miika from "./miika.jpg";
           }}
           src={miika}
           alt="Image of a handsome young pro, battle bruised but still full of young energy"
-          width={150}
+          width={200}
         />
-      </div>
-      <div class="flex justify-between items-center">
-        <p>
+      </section>
+
+      <!-- Introduction -->
+      <section class="max-w-2xl mx-auto px-4 py-10">
+        <p class="text-lg">
           Hello, My name is Miika. I am a professional software engineer, based
           in Helsinki, Finland. I am serious about honing my craft, and I take
           pride in my producing code that is as stable, performant and secure as
           possible.
         </p>
-      </div>
-      <h2 class="text-2xl">Stuff I have built</h2>
-      <h3 class="text-xl">Upright</h3>
-      <p>
-        <a href="https://www.uprightproject.com/">Upright</a> is a company that develops
-        a macroeconomic model in order to gain a holistic view on impact footprints
-        of products, companies and funds. I joined this adventure in the year 2021,
-        and have been mainly focusing on the internal and external web app functionality
-        to handle the large amounts of data produced. Visit the <a
-          href="https://uprightplatform.com/">Upright platform</a
-        > to see the results!
-      </p>
-      <h3 class="text-xl">MLox interpreter</h3>
-      <p>
-        To follow the excellent book <a href="https://craftinginterpreters.com/"
-          >Crafting interpreters</a
-        > by Robert Nystrom, I implemented my own mod of the interpreted language
-        built in the book. The (toy) language is called mlox, and you can try it
-        in the browser
-        <a href="/mlox">here</a>. The interpreter is written in Typescript, and
-        its source is available <a href="https://github.com/miikalei/mlox"
-          >here.</a
-        >
-      </p>
-      <h3 class="text-xl">This website</h3>
-      <p>
-        The website you are viewing right now is built with Astro and served
-        with GitHub pages. It utilizes React components and Tailwind. Check out
-        the source on <a href="https://github.com/miikalei/miikalei.github.io"
-          >GitHub</a
-        >.
-      </p>
-      <h3 class="text-xl">Miscellaneous exercises</h3>
-      <p>
-        I like solving simple structured programming puzzles for the easy
-        comparisons to alternative solutions. Check out my <a
-          href="https://github.com/miikalei/aoc"
-          >Advent of Code solutions (in Rust)</a
-        > and <a href="https://github.com/miikalei/project-euler"
-          >Project Euler solutions (in Python)</a
-        >. I also play CTFs at <a href="https://overthewire.org"
-          >Overthewire.org</a
-        >.
-      </p>
-      <h2 class="text-2xl">Education</h2>
-      <p>
-        Master of Science and Bachelod of Science at Aalto University, 300 ETCS,
-        2015-2021. Graduated with honors, with GPA 4.95 / 5.
-      </p>
-      <p>
-        Main focus of my studies was on pure mathematics, with minority focus on
-        computer science, graphics and ML.
-      </p>
-      <p>
-        My master's thesis, <a
-          href="https://aaltodoc.aalto.fi/items/16c62b40-2245-4875-a6e8-33661bed8393"
-          >Federated Multi-task Learning over Networked Data</a
-        >, is freely available for reading. My bachelor's thesis, <a
-          href="https://aaltodoc.aalto.fi/items/5422ef14-df68-415b-bb6a-ab8d008c7849"
-          >Quaternion algebras and well-rounded lattices</a
-        >, is available only in the Aalto University library.
-      </p>
-      <h2 class="text-2xl">Technologies I've used</h2>
-      <h3 class="text-xl">Languages</h3>
-      <ul>
-        <li>Typescript</li>
-        <li>Python</li>
-        <li>C/C++</li>
-        <li>Rust</li>
-      </ul>
+      </section>
 
-      <h3 class="text-xl">Backend & DevOps</h3>
-      <ul>
-        <li>PostgreSQL</li>
-        <li>Node</li>
-        <li>Docker</li>
-        <li>Docker swarm</li>
-        <li>AWS</li>
-        <li>Linux</li>
-        <li>Opentelemetry</li>
-        <li>Jaeger</li>
-        <li>Prometheus</li>
-      </ul>
+      <!-- Projects Section -->
+      <section class="max-w-2xl mx-auto px-4 py-10">
+        <h2 class="text-2xl font-bold mb-6">Stuff I have built</h2>
+        <ul>
+          <li>
+            <h3 class="text-xl font-semibold">Upright</h3>
+            <p class="text-gray-600">
+              <a href="https://www.uprightproject.com/">Upright</a> is a company
+              that develops a macroeconomic model in order to gain a holistic view
+              on impact footprints of products, companies and funds. I joined this
+              adventure in the year 2021, and have been mainly focusing on the internal
+              and external web app functionality to handle the large amounts of data
+              produced. Visit the <a href="https://uprightplatform.com/"
+                >Upright platform</a
+              > to see the results!
+            </p>
+          </li>
 
-      <h3 class="text-xl">Frontend</h3>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>React</li>
-        <li>Astro</li>
-        <li>Tailwind</li>
-      </ul>
+          <li>
+            <h3 class="text-xl font-semibold">MLox interpreter</h3>
+            <p class="text-gray-600">
+              To follow the excellent book <a
+                href="https://craftinginterpreters.com/"
+                >Crafting interpreters</a
+              > by Robert Nystrom, I implemented my own mod of the interpreted language
+              built in the book. The (toy) language is called mlox, and you can try
+              it in the browser
+              <a href="/mlox">here</a>. The interpreter is written in
+              Typescript, and its source is available <a
+                href="https://github.com/miikalei/mlox">here.</a
+              >
+            </p>
+          </li>
 
-      <h3 class="text-xl">Data analysis</h3>
-      <ul>
-        <li>Python notebooks</li>
-        <li>Scipy</li>
-        <li>Pytorch</li>
-      </ul>
+          <li>
+            <h3 class="text-xl font-semibold">This website</h3>
+            <p class="text-gray-600">
+              The website you are viewing right now is built with Astro and
+              served with GitHub pages. It utilizes React components and
+              Tailwind. Check out the source on <a
+                href="https://github.com/miikalei/miikalei.github.io">GitHub</a
+              >.
+            </p>
+          </li>
+
+          <li>
+            <h3 class="text-xl font-semibold">Miscellaneous exercises</h3>
+            <p class="text-gray-600">
+              <p>
+                I like solving simple structured programming puzzles for the
+                easy comparisons to alternative solutions. Check out my <a
+                  href="https://github.com/miikalei/aoc"
+                  >Advent of Code solutions (in Rust)</a
+                > and <a href="https://github.com/miikalei/project-euler"
+                  >Project Euler solutions (in Python)</a
+                >. I also play CTFs at <a href="https://overthewire.org"
+                  >Overthewire.org</a
+                >.
+              </p>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Education -->
+      <section class="max-w-3xl mx-auto px-4 py-10">
+        <h2 class="text-2xl font-bold mb-6">Education</h2>
+        <p>
+          Master of Science and Bachelod of Science at Aalto University, 300
+          ETCS, 2015-2021. Graduated with honors, with GPA 4.95 / 5.
+        </p>
+        <p>
+          Main focus of my studies was on pure mathematics, with minority focus
+          on computer science, graphics and ML.
+        </p>
+        <p>
+          My master's thesis, <a
+            href="https://aaltodoc.aalto.fi/items/16c62b40-2245-4875-a6e8-33661bed8393"
+            >Federated Multi-task Learning over Networked Data</a
+          >, is freely available for reading. My bachelor's thesis, <a
+            href="https://aaltodoc.aalto.fi/items/5422ef14-df68-415b-bb6a-ab8d008c7849"
+            >Quaternion algebras and well-rounded lattices</a
+          >, is available only in the Aalto University library.
+        </p>
+      </section>
+
+      <!-- Technologies -->
+      <section class="max-w-5xl mx-auto px-4 py-10">
+        <h2 class="text-2xl font-bold mb-6">Technologies I've used</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Languages</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>
+                <strong>Typescript</strong> – Most professsional experience, frontend,
+                backend and scripting
+              </li>
+              <li>
+                <strong>Python</strong> – Mainly for data analysis and scripting
+              </li>
+              <li><strong>C/C++</strong> – Graphics and big math</li>
+              <li><strong>Rust</strong> – Hobbyist, exercises</li>
+              <li><strong>Scala</strong> – University courses only</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Backend & DevOps</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li><strong>PostgreSQL</strong></li>
+              <li><strong>Node</strong></li>
+              <li><strong>Docker</strong></li>
+              <li><strong>Docker swarm</strong></li>
+              <li><strong>AWS</strong></li>
+              <li><strong>Linux</strong></li>
+              <li><strong>Opentelemetry</strong></li>
+              <li><strong>Jaeger</strong></li>
+              <li><strong>Prometheus</strong></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>React</li>
+              <li>HTML/CSS</li>
+              <li>Astro</li>
+              <li>Tailwind</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Data analysis</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>Python notebooks</li>
+              <li>Scipy</li>
+              <li>Pytorch</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
+
+  <!-- Footer -->
   <footer
-    class="text-sm w-full h-12 bg-slate-300 flex flex-col justify-center items-center"
+    class="text-center text-sm text-gray-500 w-full py-8 flex flex-col justify-center items-center"
   >
     <p>Miika Leinonen, 2025</p>
     <p>
