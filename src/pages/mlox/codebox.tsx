@@ -90,9 +90,9 @@ export function Codebox() {
             </li>
         </ul >
         <div className="m-0.5">
-            <p>
-                Run MLOX code <strong>anywhere</strong>, powered by modern javascript! Browser the examples to figure out the syntax.{' '}
-                <small>Remember, this is a toy language.</small>
+            <p className="py-1">
+                Run MLOX code in your browser! Browse the examples available in the menu bar to figure out the syntax.{' '}
+                Remember, this is a toy language, so don't judge me!
             </p>
             <div className="flex">
                 <textarea
