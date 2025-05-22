@@ -80,6 +80,14 @@ export function Codebox() {
                     })}
                 </ul>
             </li>
+            <li tabIndex={1} aria-haspopup="true">
+                <u>G</u>o
+                <ul role="menu">
+                    <li>
+                        <a href="/">Back to main page</a>
+                    </li>
+                </ul>
+            </li>
         </ul >
         <div className="m-0.5">
             <p>
