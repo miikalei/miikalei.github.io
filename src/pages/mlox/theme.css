@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+    --font-serif: "Ms sans serif", sans-serif;
+    --font-mono: "ms console", monospace;
+}

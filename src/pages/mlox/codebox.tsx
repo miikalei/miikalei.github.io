@@ -94,7 +94,7 @@ export function Codebox() {
                 Run MLOX code in your browser! Browse the examples available in the menu bar to figure out the syntax.{' '}
                 Remember, this is a toy language, so don't judge me!
             </p>
-            <div className="flex">
+            <div className="flex font-mono">
                 <textarea
                     className="grow h-42 resize-both cursor-auto"
                     value={code} onChange={(e) => setCode(e.target.value)}
@@ -105,7 +105,7 @@ export function Codebox() {
                 <button onClick={handleStop} disabled={!isRunning}>Stop</button>
                 {isRunning && <div className="progress-bar w-43"></div>}
             </div>
-            <div className={`lowered resize-y h-42 whitespace-pre-wrap overflow-x-auto ${isError ? "text-red-500" : ''}`}>
+            <div className={`lowered font-mono resize-y h-42 whitespace-pre-wrap overflow-x-auto ${isError ? "text-red-500" : ''}`}>
                 <div className='[overflow-anchor:none] min-h-42'>
                     {errOutput || output || "Your code output will be displayed here"}
                 </div>
