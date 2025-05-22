@@ -146,5 +146,21 @@ class A {
         class C < B {}
 
         C().test();    
+`,
+    "NATO compatibility test":
+        `fun to_char(n) {
+        if(n == 0) {
+          return "p";
+        }
+        else if (n > 1) {
+          return "!";
+        }
+        else {return "r";}
+    }
+
+    for (var i = 0; i*i < 5; i = i - 1 + 2) {
+        print to_char(i);
+    }
 `
+
 } as const;
