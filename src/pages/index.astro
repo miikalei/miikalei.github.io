@@ -2,6 +2,9 @@
 import "../global.css";
 import { Image } from "astro:assets";
 import miika from "./miika.jpg";
+import github from "/src/pages/github.svg";
+import linkedin from "/src/pages/linkedin.svg";
+import world from "/src/pages/world.svg";
 ---
 
 <html>
@@ -20,13 +23,13 @@ import miika from "./miika.jpg";
           <h1 class="font-sans text-5xl my-2">Miika Leinonen</h1>
           <div class="flex gap-4 items-center">
             <a href="https://github.com/miikalei">
-              <img src="/src/pages/github.svg" width="30" /></a
+              <Image alt="Github logo" src={github} width="30" /></a
             >
             <a href="https://www.linkedin.com/in/miikaleinonen/">
-              <img src="/src/pages/linkedin.svg" width="30" />
+              <Image alt="Linkedin logo" src={linkedin} width="30" />
             </a>
             <a href="/">
-              <img src="/src/pages/world.svg" width="30" />
+              <Image alt="Link to personal website" src={world} width="30" />
             </a>
           </div>
         </div>
