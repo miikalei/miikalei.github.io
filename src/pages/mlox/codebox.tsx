@@ -91,12 +91,12 @@ export function Codebox() {
         </ul >
         <div className="m-0.5">
             <p>
-                Run MLOX code anywhere, powered by modern javascript!
-                <small>Remember, this is a toy language </small>
+                Run MLOX code <strong>anywhere</strong>, powered by modern javascript! Browser the examples to figure out the syntax.{' '}
+                <small>Remember, this is a toy language.</small>
             </p>
             <div className="flex">
                 <textarea
-                    className="grow h-42 resize-none cursor-auto"
+                    className="grow h-42 resize-both cursor-auto"
                     value={code} onChange={(e) => setCode(e.target.value)}
                 ></textarea>
             </div>
@@ -105,7 +105,7 @@ export function Codebox() {
                 <button onClick={handleStop} disabled={!isRunning}>Stop</button>
                 {isRunning && <div className="progress-bar w-43"></div>}
             </div>
-            <div className={`lowered h-42 whitespace-pre-wrap overflow-x-auto ${isError ? "text-red-500" : ''}`}>
+            <div className={`lowered resize-y h-42 whitespace-pre-wrap overflow-x-auto ${isError ? "text-red-500" : ''}`}>
                 <div className='[overflow-anchor:none] min-h-42'>
                     {errOutput || output || "Your code output will be displayed here"}
                 </div>
